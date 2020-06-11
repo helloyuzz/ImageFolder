@@ -46,3 +46,6 @@ or
 ```
 py .\aa.py
 ```
+
+### Python-tutorial:
+[https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial)
