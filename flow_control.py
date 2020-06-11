@@ -49,3 +49,26 @@ for n in range(3):
         print(n,'偶数')
 else:
         print(n,"基数")
+
+## 嵌套循环
+for i in range(2,16):
+    for j in range(2,i):
+        if i % j ==0:
+            print(i,"=",j,"*",i//j)
+            break # 退出循环
+            # continue
+    else:
+        print(i,"奇数")
+
+array = [1,2,3,4,5]
+for item in array:
+    print(item,end=",")
+
+# array.each {|item| puts item}
+
+## pass
+# while True:
+#     pass
+
+# class Type:
+#     pass
