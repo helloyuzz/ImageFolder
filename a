@@ -1,0 +1,32 @@
+import org.apache.jmeter.config.Arguments;
+import org.apache.jemeter.config.Argument;
+import org.apache.commons.codec.digest.DigestUtils;
+
+//获取请求参数
+Arguments args = sampler.getArguments();
+Map params = args.getArgumentsAsMap();
+log.info("*************params:"+params.toString());
+
+
+
+
+
+Map sortMap = new TreeMap(new Comparator() {
+  public int compare(String obj1, String obj2) {
+      return obj1.compareTo(obj2);//升序排序
+  }
+});
+sortMap.putAll(params);
+
+Iterator sortByKeyEntries = sortMap.entrySet().iterator(); 
+StringBuilder sb = new StringBuilder();
+while (sortByKeyEntries.hasNext()) { 
+Map.Entry entry = sortByKeyEntries.next(); 
+  sb.append(entry.getKey()).append("=").append(entry.getValue()).append("_");
+}
+log.info("=================sb.toString():"+sb.toString());
+
+String  url= sb.toString();
+String  url_encoded = URLEncoder.encode(url,"utf-8");
+String sign = DigestUtils.md5Hex(url_encoded);
+sampler.addArgument("sign", sign);
