@@ -49,3 +49,5 @@ py .\aa.py
 
 ### Python-tutorial:
 [https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial)
+
+###　1.Create and activate the virtual environment
